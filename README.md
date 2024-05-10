@@ -12,7 +12,7 @@ AADC uses Code Generation AAD™ approach that combines Code Transformation and 
 
 The performance of the runtime graph compilation is crucial, because it's now part of the overall model execution. This is why a specialised graph compiler needs to be used - any off-the-shelf compiler would introduce substantial delay, making the approach not practically viable. This is where TensorFlow for finance project failed.
 
- 
+Please join our discord: https://discord.gg/YqYDfWj6
 
 ## Use Cases
 
