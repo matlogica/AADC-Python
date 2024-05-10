@@ -38,9 +38,11 @@ https://arxiv.org/abs/2207.03577
 
 Life science, physics, drug research, disease diagnosis (https://elib.uni-stuttgart.de/bitstream/11682/13787/7/PhD_Thesis_Ivan.pdf) benefit from simplifying development, automatic differentiation and improving performance of simulations.
 
-Topology Optimization 101: How to Use Algorithmic Models to Create Lightweight Design:  https://formlabs.com/blog/topology-optimization/
-AuTO: a framework for Automatic differentiation in Topology Optimization:  https://link.springer.com/article/10.1007/s00158-021-03025-8
-A set of examples that use AD for several purposes with simulation:  https://www.dolfin-adjoint.org/en/stable/documentation/examples.html.
+* Topology Optimization 101: How to Use Algorithmic Models to Create Lightweight Design:  https://formlabs.com/blog/topology-optimization/
+
+* AuTO: a framework for Automatic differentiation in Topology Optimization:  https://link.springer.com/article/10.1007/s00158-021-03025-8
+
+* A set of examples that use AD for several purposes with simulation:  https://www.dolfin-adjoint.org/en/stable/documentation/examples.html.
  
 
 ## Package contents
