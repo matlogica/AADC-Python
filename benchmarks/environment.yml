@@ -1,0 +1,11 @@
+name: aadc_benchmarks
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - jax
+  - pytorch-cpu
+  - tensorflow-cpu
+  - pip:
+    - mtalg
