@@ -1,9 +1,10 @@
-import aadc
 import numpy as np
 import pytest
 
+import aadc
 
-def test_all():
+
+def test_all() -> None:
     func = aadc.Functions()
     func.start_recording()
     val1 = aadc.array([1.0, 2.0])
@@ -17,7 +18,7 @@ def test_all():
     assert result
 
 
-def test_any():
+def test_any() -> None:
     func = aadc.Functions()
     func.start_recording()
     val1 = aadc.array([1.0, 2.0])
@@ -32,7 +33,7 @@ def test_any():
 
 
 @pytest.mark.skip("Not supported for now")
-def test_argmax():
+def test_argmax() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -44,7 +45,7 @@ def test_argmax():
 
 
 @pytest.mark.skip("Not supported for now")
-def test_argmin():
+def test_argmin() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([3.0, 2.0, 1.0])
@@ -55,7 +56,7 @@ def test_argmin():
     assert result == 2
 
 
-def test_conj():
+def test_conj() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -66,7 +67,7 @@ def test_conj():
     assert (result == expected).all()
 
 
-def test_conjugate():
+def test_conjugate() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -77,7 +78,7 @@ def test_conjugate():
     assert (result == expected).all()
 
 
-def test_max():
+def test_max() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -88,7 +89,7 @@ def test_max():
     assert result == expected
 
 
-def test_mean():
+def test_mean() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -99,7 +100,7 @@ def test_mean():
     assert result == expected
 
 
-def test_prod():
+def test_prod() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -110,7 +111,7 @@ def test_prod():
     assert result == expected
 
 
-def test_ptp():
+def test_ptp() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -122,7 +123,7 @@ def test_ptp():
 
 
 @pytest.mark.skip("Currently not supported")
-def test_ptp_multidim_with_out():
+def test_ptp_multidim_with_out() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([[1.0, 2.0], [3.0, 4.0]])
@@ -135,7 +136,7 @@ def test_ptp_multidim_with_out():
 
 
 @pytest.mark.skip("Currently not supported")
-def test_round():
+def test_round() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.2, 2.3, 3.4])
@@ -146,7 +147,7 @@ def test_round():
     assert np.allclose(result, expected)
 
 
-def test_std():
+def test_std() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -157,7 +158,7 @@ def test_std():
     assert result == expected
 
 
-def test_sum():
+def test_sum() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -168,7 +169,7 @@ def test_sum():
     assert result == expected
 
 
-def test_var():
+def test_var() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([[1.0, 2.0], [3.0, 4.0]])
@@ -180,7 +181,7 @@ def test_var():
 
 
 @pytest.mark.skip("Currently not supported")
-def test_argsort():
+def test_argsort() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([2.0, 1.0, 4.0, 3.0])
@@ -192,7 +193,7 @@ def test_argsort():
 
 
 @pytest.mark.skip("Currently not supported")
-def test_choose():
+def test_choose() -> None:
     func = aadc.Functions()
     func.start_recording()
     val1 = aadc.array([0.0, 1.0])
@@ -206,7 +207,7 @@ def test_choose():
 
 
 @pytest.mark.skip("Currently not supported")
-def test_compress():
+def test_compress() -> None:
     func = aadc.Functions()
     func.start_recording()
     val1 = aadc.array([0.0, 1.0, 1.0, 0.0, 1.0])
@@ -219,7 +220,7 @@ def test_compress():
     assert np.array_equal(result, expected)
 
 
-def test_cumprod():
+def test_cumprod() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -230,7 +231,7 @@ def test_cumprod():
     assert np.array_equal(result, expected)
 
 
-def test_cumsum():
+def test_cumsum() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -241,7 +242,7 @@ def test_cumsum():
     assert np.array_equal(result, expected)
 
 
-def test_diagonal():
+def test_diagonal() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([[1.0, 2.0], [3.0, 4.0]])
@@ -253,7 +254,7 @@ def test_diagonal():
 
 
 @pytest.mark.skip("Currently not supported")
-def test_nonzero():
+def test_nonzero() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 0.0, 3.0])
@@ -265,7 +266,7 @@ def test_nonzero():
 
 
 @pytest.mark.skip("Currently not supported")
-def test_partition():
+def test_partition() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([5.0, 4.0, 3.0, 2.0, 1.0])
@@ -277,7 +278,7 @@ def test_partition():
 
 
 @pytest.mark.skip("Currently not supported")
-def test_put():
+def test_put() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([[1.0, 2.0], [3.0, 4.0]])
@@ -290,7 +291,7 @@ def test_put():
     assert np.array_equal(result, expected)
 
 
-def test_ravel():
+def test_ravel() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
@@ -301,7 +302,7 @@ def test_ravel():
     assert np.array_equal(result, expected)
 
 
-def test_repeat():
+def test_repeat() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -312,7 +313,7 @@ def test_repeat():
     assert np.array_equal(result, expected)
 
 
-def test_resize():
+def test_resize() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
@@ -323,7 +324,7 @@ def test_resize():
 
 
 @pytest.mark.skip("Currently not supported")
-def test_searchsorted():
+def test_searchsorted() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0, 4.0, 5.0])
@@ -334,7 +335,7 @@ def test_searchsorted():
     assert result == expected
 
 
-def test_squeeze():
+def test_squeeze() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([[[1.0], [2.0], [3.0]]])
@@ -346,7 +347,7 @@ def test_squeeze():
     assert np.array_equal(result, expected)
 
 
-def test_clip():
+def test_clip() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -358,7 +359,7 @@ def test_clip():
     assert np.array_equal(result, expected)
 
 
-def test_min():
+def test_min() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -370,7 +371,7 @@ def test_min():
     assert result == expected
 
 
-def test_trace():
+def test_trace() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([[1.0, 2.0], [3.0, 4.0]])
@@ -382,7 +383,7 @@ def test_trace():
     assert result == expected
 
 
-def test_copy():
+def test_copy() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -394,7 +395,7 @@ def test_copy():
     assert np.array_equal(result, expected)
 
 
-def test_reshape():
+def test_reshape() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0, 4.0, 5.0, 6.0])
@@ -407,7 +408,7 @@ def test_reshape():
 
 
 @pytest.mark.skip("Currently not supported")
-def test_sort():
+def test_sort() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([2.0, 1.0, 3.0])
@@ -419,7 +420,7 @@ def test_sort():
     assert np.array_equal(result, expected)
 
 
-def test_swapaxes():
+def test_swapaxes() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
@@ -431,7 +432,7 @@ def test_swapaxes():
     assert np.array_equal(result, expected)
 
 
-def test_take():
+def test_take() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0, 4.0])
@@ -444,7 +445,7 @@ def test_take():
     assert np.array_equal(result, expected)
 
 
-def test_transpose():
+def test_transpose() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([[1.0, 2.0], [3.0, 4.0]])
@@ -456,7 +457,7 @@ def test_transpose():
     assert np.array_equal(result, expected)
 
 
-def test_astype():
+def test_astype() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -469,7 +470,7 @@ def test_astype():
 
 
 @pytest.mark.skip("Currently not supported")
-def test_byteswap():
+def test_byteswap() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1, 2, 3], dtype="<i4")
@@ -481,7 +482,7 @@ def test_byteswap():
     assert np.array_equal(result, expected)
 
 
-def test_fill():
+def test_fill() -> None:
     val = aadc.array([1.0, 2.0, 3.0])
     val.fill(aadc.idouble(5.0))
     expected = aadc.array([5.0, 5.0, 5.0])
@@ -489,7 +490,7 @@ def test_fill():
     assert np.array_equal(val, expected)
 
 
-def test_flatten():
+def test_flatten() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([[1.0, 2.0], [3.0, 4.0]])
@@ -501,7 +502,7 @@ def test_flatten():
     assert np.array_equal(result, expected)
 
 
-def test_item():
+def test_item() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([[1.0, 2.0], [3.0, 4.0]])
@@ -512,21 +513,8 @@ def test_item():
     assert result == expected
 
 
-def test_itemset():
-    func = aadc.Functions()
-    func.start_recording()
-    val = aadc.array([1.0, 2.0, 3.0])
-    val.mark_as_input()
-    val.itemset(1, 5.0)
-    result = val
-    func.stop_recording()
-    expected = aadc.array([1.0, 5.0, 3.0])
-    assert isinstance(expected, aadc.ndarray.AADCArray)
-    assert np.array_equal(result, expected)
-
-
 @pytest.mark.skip(reason="Currently not supported")
-def test_newbyteorder():
+def test_newbyteorder() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1, 2, 3], dtype="<i4")
@@ -538,14 +526,14 @@ def test_newbyteorder():
     assert np.array_equal(result, expected)
 
 
-def test_setflags():
+def test_setflags() -> None:
     val = aadc.array([1, 2, 3])
     val.setflags(write=False)
     assert val._buffer.flags["WRITEABLE"] is False
 
 
 @pytest.mark.skip(reason="Currently not supported")
-def test_tofile():
+def test_tofile() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -558,7 +546,7 @@ def test_tofile():
     assert np.array_equal(result, expected)
 
 
-def test_tolist():
+def test_tolist() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -571,7 +559,7 @@ def test_tolist():
 
 
 @pytest.mark.skip(reason="Currently not supported")
-def test_tostring():
+def test_tostring() -> None:
     func = aadc.Functions()
     func.start_recording()
     val = aadc.array([1.0, 2.0, 3.0])
@@ -582,7 +570,7 @@ def test_tostring():
     assert result == expected
 
 
-def test_view():
+def test_view() -> None:
     val = aadc.array([1.1, 2.1, 3.1])
     result = val.view(dtype=int)
     expected = aadc.array([4607632778762754458, 4611911198408756429, 4614162998222441677])

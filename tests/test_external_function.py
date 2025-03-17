@@ -1,11 +1,12 @@
 import math
 import time
 
+import numpy as np
+import pytest
+
 import aadc
 import aadc.record_function
 import aadc.vectorize
-import numpy as np
-import pytest
 
 
 @pytest.fixture()
@@ -16,7 +17,7 @@ def monkeypatch_mathexp():
     math.exp = orig
 
 
-def test_external_function(monkeypatch_mathexp):
+def test_external_function(monkeypatch_mathexp) -> None:
     class MyFunc(aadc.VectorFunction):
         def func(self, x):
             print("func in python")
@@ -69,7 +70,7 @@ def test_external_function(monkeypatch_mathexp):
     #    print(res[1][outputsArg[i]])
 
 
-def test_vector_function_with_jac():
+def test_vector_function_with_jac() -> None:
     rng = np.random.default_rng(1234)
 
     a = rng.standard_normal((10, 10))
@@ -88,7 +89,7 @@ def test_vector_function_with_jac():
     assert np.allclose(jac, a)
 
 
-def test_vectorize():
+def test_vectorize() -> None:
     rng = np.random.default_rng(1234)
 
     def func(x):

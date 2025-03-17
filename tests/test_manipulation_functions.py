@@ -1,4 +1,5 @@
 import numpy as np
+
 from aadc import Functions, idouble
 from aadc.ndarray import AADCArray
 
@@ -57,7 +58,7 @@ class TestBroadcastArrays:
         assert np.all(val2 == np.array([[1.0], [2.0]]))
 
 
-def test_broadcast_to():
+def test_broadcast_to() -> None:
     func = Functions()
     func.start_recording()
     val = AADCArray([1.0, 2.0, 3.0])
@@ -68,7 +69,7 @@ def test_broadcast_to():
     assert np.all(val == np.array([[1.0, 2.0, 3.0], [1.0, 2.0, 3.0], [1.0, 2.0, 3.0]]))
 
 
-def test_concatenate():
+def test_concatenate() -> None:
     func = Functions()
     func.start_recording()
     val1 = AADCArray([[1.0, 2.0], [3.0, 4.0]])
@@ -81,7 +82,7 @@ def test_concatenate():
     assert np.all(val == np.array([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]]))
 
 
-def test_concatenate_active_inactive():
+def test_concatenate_active_inactive() -> None:
     func = Functions()
     func.start_recording()
     val1 = AADCArray([[1.0, 2.0], [3.0, 4.0]])
@@ -93,7 +94,7 @@ def test_concatenate_active_inactive():
     assert np.all(val == np.array([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]]))
 
 
-def test_concatenate_numpy_array():
+def test_concatenate_numpy_array() -> None:
     func = Functions()
     func.start_recording()
     val1 = AADCArray([[1.0, 2.0], [3.0, 4.0]])
@@ -105,7 +106,7 @@ def test_concatenate_numpy_array():
     assert np.all(val == np.array([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]]))
 
 
-def test_expand_dims():
+def test_expand_dims() -> None:
     func = Functions()
     func.start_recording()
     val = AADCArray([1.0, 2.0])
@@ -116,7 +117,7 @@ def test_expand_dims():
     assert np.all(val == np.array([[1.0], [2.0]]))
 
 
-def test_flip():
+def test_flip() -> None:
     func = Functions()
     func.start_recording()
     val = AADCArray([[1.0, 2.0], [3.0, 4.0]])
@@ -127,7 +128,7 @@ def test_flip():
     assert np.all(val == np.array([[4.0, 3.0], [2.0, 1.0]]))
 
 
-def test_moveaxis():
+def test_moveaxis() -> None:
     func = Functions()
     func.start_recording()
     val = AADCArray(np.ones((3, 4, 5)))
@@ -138,7 +139,7 @@ def test_moveaxis():
     assert val.shape == (4, 5, 3)
 
 
-def test_repeat():
+def test_repeat() -> None:
     func = Functions()
     func.start_recording()
     val = AADCArray([1.0, 2.0, 3.0])
@@ -149,7 +150,7 @@ def test_repeat():
     assert np.all(val == np.array([1.0, 1.0, 1.0, 2.0, 2.0, 2.0, 3.0, 3.0, 3.0]))
 
 
-def test_reshape():
+def test_reshape() -> None:
     func = Functions()
     func.start_recording()
     val = AADCArray([1.0, 2.0, 3.0, 4.0, 5.0, 6.0])
@@ -160,7 +161,7 @@ def test_reshape():
     assert np.all(val == np.array([[1.0, 2.0], [3.0, 4.0], [5.0, 6.0]]))
 
 
-def test_roll():
+def test_roll() -> None:
     func = Functions()
     func.start_recording()
     val = AADCArray([1.0, 2.0, 3.0])
@@ -171,7 +172,7 @@ def test_roll():
     assert np.all(val == np.array([3.0, 1.0, 2.0]))
 
 
-def test_squeeze():
+def test_squeeze() -> None:
     func = Functions()
     func.start_recording()
     val = AADCArray([[[1.0], [2.0], [3.0]]])
@@ -182,7 +183,7 @@ def test_squeeze():
     assert np.all(val == np.array([1.0, 2.0, 3.0]))
 
 
-def test_stack():
+def test_stack() -> None:
     func = Functions()
     func.start_recording()
     val1 = AADCArray([1.0, 2.0, 3.0])
@@ -195,7 +196,7 @@ def test_stack():
     assert np.all(val == np.array([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]))
 
 
-def test_tile():
+def test_tile() -> None:
     func = Functions()
     func.start_recording()
     val = AADCArray([1.0, 2.0, 3.0])

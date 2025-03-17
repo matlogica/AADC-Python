@@ -1,7 +1,7 @@
 import aadc
 
 
-def test_with_passive():
+def test_with_passive() -> None:
     funcs = aadc.Functions()
     funcs.start_recording()
     x = aadc.idouble(1.0)

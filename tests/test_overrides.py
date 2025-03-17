@@ -2,14 +2,15 @@ import builtins
 import time
 from threading import Thread
 
-import aadc
-import aadc.overrides
 import numpy as np
 import pytest
+from scipy.stats import norm
+
+import aadc
+import aadc.overrides
 from aadc import Functions
 from aadc.ndarray import AADCArray
 from aadc.overrides import float, int, isinstance
-from scipy.stats import norm
 
 
 @pytest.fixture
@@ -31,53 +32,53 @@ def problematic_code():
     return func
 
 
-def test_call_float_on_float():
+def test_call_float_on_float() -> None:
     value = 3.14
     regular_float = float(value)
     assert builtins.isinstance(regular_float, builtins.float), "Regular float should be an instance of builtins.float"
 
 
-def test_call_float_on_idouble():
+def test_call_float_on_idouble() -> None:
     value = aadc.idouble(3.14)
     aadc_float = float(value)
     assert builtins.isinstance(aadc_float, aadc.idouble), "idouble should pass through float with noop"
 
 
-def test_call_isinstace_on_float():
+def test_call_isinstace_on_float() -> None:
     assert isinstance(3.14, float), "regular float should be treated as the new float"
     assert isinstance(3.14, builtins.float), "regular float should be treated as a builtins.float"
 
 
-def test_call_isinstace_on_idouble():
+def test_call_isinstace_on_idouble() -> None:
     value = aadc.idouble(10.0)
     assert isinstance(value, float), "aadc.idouble should be treated as the new float"
     assert isinstance(value, builtins.float), "aadc.idouble should be treated as a builtins.float"
 
 
-def test_call_int_on_int():
+def test_call_int_on_int() -> None:
     value = 10
     regular_int = int(value)
     assert isinstance(regular_int, builtins.int), "Regular int should be an instance of builtins.int"
 
 
-def test_call_int_on_iint():
+def test_call_int_on_iint() -> None:
     value = aadc.iint(20)
     aadc_int = int(value)
     assert isinstance(aadc_int, aadc.iint), "iint should pass through int with noop"
 
 
-def test_call_isinstace_on_int():
+def test_call_isinstace_on_int() -> None:
     assert isinstance(5, int), "Regular int should be treated as the new int"
     assert isinstance(5, builtins.int), "Regular int should be treated as a builtins.int"
 
 
-def test_call_isinstace_on_iint():
+def test_call_isinstace_on_iint() -> None:
     value = aadc.iint(30)
     assert isinstance(value, int), "aadc.iint should be treated as the new int"
     assert isinstance(value, builtins.int), "aadc.iint should be treated as a builtins.int"
 
 
-def test_scipy_norm_cdf():
+def test_scipy_norm_cdf() -> None:
     rng = np.random.default_rng(1234)
     np_randoms = rng.standard_normal(10)
 
@@ -96,7 +97,7 @@ def test_scipy_norm_cdf():
     assert np.allclose(out_aadc, out_np)
 
 
-def test_full_like():
+def test_full_like() -> None:
     funcs = Functions()
     funcs.start_recording()
     value = aadc.idouble(42.0)
@@ -113,7 +114,7 @@ def test_full_like():
     assert np.allclose(output, 42.0)
 
 
-def test_numpy_monkeypatch(problematic_code):
+def test_numpy_monkeypatch(problematic_code) -> None:
     rng = np.random.default_rng(1234)
 
     assets = 10
@@ -136,7 +137,7 @@ def test_numpy_monkeypatch(problematic_code):
     thread.join()
 
 
-def test_numpy_monkeypatch_gbm(problematic_code):
+def test_numpy_monkeypatch_gbm(problematic_code) -> None:
     s0 = 100
     rfr = 0.01
     sigma = 0.2
